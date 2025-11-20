@@ -1,0 +1,23 @@
+! XTB2 OPT NUMFREQ
+%maxcore 3300 #for icelake under 3700
+%PAL NPROCS 5 END
+
+%scf 
+MaxIter 2000 
+end
+
+%geom
+Constraints
+{B 44 49 2.2 C} # B for Bond, C for Constraint
+{B 114 219 1.1 C} # B for Bond, C for Constraint
+{B 300 303 2.2 C} # B for Bond, C for Constraint
+{B 2 3 2.2 C} # B for Bond, C for Constraint
+{B 10 27 1.1 C} # B for Bond, C for Constraint
+{B 312 329 1.1 C} # B for Bond, C for Constraint
+
+end
+end
+
+! ALPB(Acetonitrile)
+
+*xyzfile 12 1  GFN2_oldORCA.xyz
