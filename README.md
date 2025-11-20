@@ -4,13 +4,8 @@ This repository contains the scripts and xyz-files relevant for the study of a s
 
 Watch this video to see how the flexible quadrilateral geometry of the tetramine subcomponent works:
 
-<div style="text-align: center; margin: 1em 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;">
-  <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-          src="https://www.youtube.com/embed/Om998bbISRY"
-          frameborder="0" 
-          allowfullscreen>
-  </iframe>
-</div>
+[![Watch the video](https://img.youtube.com/vi/Om998bbISRY/0.jpg)](https://www.youtube.com/watch?v=Om998bbISRY)
+
 
 
 ## Research Overview
