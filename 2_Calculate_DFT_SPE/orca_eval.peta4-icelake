@@ -1,0 +1,91 @@
+#!/bin/bash
+#SBATCH -A NITSCHKE-SL3-CPU
+##SBATCH -A PCPT-SL2-CPU
+#SBATCH --partition=icelake #ORCA doesn't work on sapphire 
+#SBATCH --job-name=ORCA
+#SBATCH --time=5:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=10
+##SBATCH --qos INTR
+source /home/pcpt3/.bashrc2
+module purge
+
+#module load rhel8/default-icl              
+#module load openmpi/4.1.1/gcc/mnop75he
+#module load ucx/1.11.2/gcc/z62pafcb
+
+#Full path to application executable:
+export PATH=/rds/user/pcpt3/hpc-work/orca:$PATH
+export LD_LIBRARY_PATH=/rds/user/pcpt3/hpc-work/orca:$LD_LIBRARY_PATH
+
+export OPENMPI_HOME=/usr/local/software/spack/spack-views/rhel8-icelake-20211027_2/openmpi-4.1.1/gcc-11.2.0/mnop75hedc4hru2c22d6oqlu7opdc4jg 
+export PATH=$OPENMPI_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$OPENMPI_HOME/lib:$LD_LIBRARY_PATH
+
+conda init
+conda activate env4
+
+numnodes=$SLURM_JOB_NUM_NODES
+numtasks=$SLURM_NTASKS
+mpi_tasks_per_node=$(echo "$SLURM_TASKS_PER_NODE" | sed -e  's/^\([0-9][0-9]*\).*$/\1/')
+
+echo $SLURM_NTASKS > nodes.info
+srun hostname >> nodes.info
+echo $USER >> nodes.info
+pwd >> nodes.info
+mydir=$(pwd)
+
+##################################################################
+
+# CREATE TEMPORARY DIRECTORY, COPY, AND CHANGE TO IT
+# The temporary directory will have the SLURM job id as its name
+
+# Creating local scratch folder 
+export scratchlocation=/rds/user/pcpt3/hpc-work/Orca-tmp
+
+if [ ! -d $scratchlocation/$USER ]
+
+then
+
+  mkdir -p $scratchlocation/$USER
+
+fi
+
+tdir=$(mktemp -d $scratchlocation/$USER/orcajob__$SLURM_JOB_ID-XXXX)
+
+#################################################################
+
+# cd to scratch
+cd $tdir
+
+# Copy job and node info to beginning of outputfile
+echo "Job execution start: $(date)" >>  $SLURM_SUBMIT_DIR/$job.out
+echo "Shared library path: $LD_LIBRARY_PATH" >>  $SLURM_SUBMIT_DIR/$job.out
+echo "Slurm Job ID is: ${SLURM_JOB_ID}" >>  $SLURM_SUBMIT_DIR/$job.out
+echo "Slurm Job name is: ${SLURM_JOB_NAME}" >>  $SLURM_SUBMIT_DIR/$job.out
+echo $SLURM_NODELIST >> $SLURM_SUBMIT_DIR/$job.out
+
+echo "SLURM_ARRAY_TASK_ID: $SLURM_ARRAY_TASK_ID"
+echo "SLURM_ARRAY_JOB_ID: $SLURM_ARRAY_JOB_ID"
+
+job_dir="${OUTPUT_FOLDER}/ORCA_job_${SLURM_ARRAY_TASK_ID}"
+#job_dir="/rds/user/pcpt3/hpc-work/HXLinkers/run200/ORCA_job_${SLURM_ARRAY_TASK_ID}" 
+echo "Making ${job_dir}"
+mkdir -p $job_dir
+
+echo "Running command: ../python $SLURM_SUBMIT_DIR/orca_eval.py --input=$INPUT --output=$job_dir/atoms-dft.xyz --charge=$CHRG --mult=1 --task=single_point --id=$SLURM_ARRAY_TASK_ID"
+
+#Have charge also as input depending on what kind of fragment
+
+# Check if the file atoms-dft.xyz already exists in the job directory
+if [ ! -f "$job_dir/atoms-dft.xyz" ]; then
+    # If the file does not exist, run the Python script
+    python $SLURM_SUBMIT_DIR/orca_eval.py --input=$INPUT --output="$job_dir/atoms-dft.xyz" --charge=$CHRG --mult=1 --task=single_point --id=$SLURM_ARRAY_TASK_ID
+    rm *.tmp *.ges
+    cp $tdir/*.xyz $job_dir
+    cp $tdir/*.out $job_dir
+    #cp $tdir/* $job_dir
+else
+    echo "File $job_dir/atoms-dft.xyz already exists. Skipping job $SLURM_ARRAY_TASK_ID."
+fi
+

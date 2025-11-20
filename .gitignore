@@ -1,0 +1,9 @@
+./4_Compare_Diastereomer_Energies/alllandscape_GFN2_ORCA/ORCA.out
+./3_Create_Conformers_4DA/distances_5.csv
+./4_Compare_Diastereomer_Energies/alllandscape_r2SCAN3c_ORCA/ORCA-1.gbw
+./4_Compare_Diastereomer_Energies/alllandscape_r2SCAN3c_ORCA/ORCA.gbw
+./4_Compare_Diastereomer_Energies/Xtal_r2SCAN3c_ORCA/ORCA-1.gbw
+./4_Compare_Diastereomer_Energies/Xtal_r2SCAN3c_ORCA/ORCA.gbw
+*.out
+*.gbw
+*.csv
