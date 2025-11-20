@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-# TriangularPrismaticMOCs
-This repository contains the initial scripts used to calculate the geometric ranges of flexible quadrilateral subcomponents.
 
-[![Watch the video](https://youtu.be/Om998bbISRY)](https://youtu.be/Om998bbISRY)
-=======
 # Naphthylene-Triangular-Prisms
 This repository contains the scripts and xyz-files relevant for the study of a series of triangular prismatic metal-organic cages (MOCs) from the subcomponent self-assembly of a geometrically flexible quadrilateral tetra-amine and increasingly large tri-amine building blocks.
+[![Watch the video](https://youtu.be/Om998bbISRY)](https://youtu.be/Om998bbISRY)
 
 ## Research Overview
 This project investigates the adaptive self-assembly of heteroleptic triangular prismatic cages using a conformationally flexible tetramine subcomponent (**A**) with rotary naphthyl arms. By pairing this adaptive tetramine with three triamines of increasing size (**B**, **C**, **D**), we successfully assembled three distinct triangular prismatic Zn<sub>6</sub>L<sub>3</sub>L'<sub>2</sub> cages with different cavity dimensions and guest-binding properties. The conformational flexibility of the tetramine enables it to adjust its quadrilateral geometry to match triamines of varying sizes, overcoming traditional size-matching constraints in heteroleptic self-assembly.
