@@ -106,4 +106,3 @@ Analysis of tetramine **A** geometries observed in crystal structures of cages *
 - All three tetramine units in landscape orientation
 - Mean geometry: (15.92 ± 0.22) × (9.70 ± 0.50) Å
 - Close to default conformation
->>>>>>> houyang/main
