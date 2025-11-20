@@ -1,0 +1,6 @@
+! r2SCAN-3c OPT TightSCF defgrid2 def2/J 
+
+%maxcore 6500
+%PAL NPROCS 8 END
+
+*xyzfile 12 1  Xtal3_GFN2.xyz

@@ -1,0 +1,7 @@
+! XTB2 OPT NUMFREQ
+%maxcore 3300 #for icelake under 3700
+%PAL NPROCS 5 END
+
+! ALPB(Acetonitrile)
+
+*xyzfile 12 1  alllandscape.xyz

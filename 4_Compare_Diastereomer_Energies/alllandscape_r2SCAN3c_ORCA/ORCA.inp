@@ -1,0 +1,7 @@
+! r2SCAN-3c OPT TightSCF defgrid2 MORead
+
+%moinp "ORCA-1.gbw"
+%maxcore 6500
+%PAL NPROCS 8 END
+
+*xyzfile 12 1  ORCA-1.xyz
