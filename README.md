@@ -60,6 +60,16 @@ Conformers analysed: 811 (after filtering)
 - 811 conformers within 100 kcal mol<sup>-1</sup> of minimum energy
 - Results visualised in scatter plots showing energy-geometry correlation
 
+Below are two concerted animations that show <!--(1) the trajectory of the tetramine **A** across the 811 conformers within 100 kcal mol<sup>-1</sup> of minimum energy, (2) -->an animated 3D plot showing the DFT energy of the 811 <!--these-->conformers.
+
+<!--<img src="2_Calculate_DFT_SPE/trajectory.gif" width="25%">-->
+
+<img src="2_Calculate_DFT_SPE/conformer_animation.gif" width="50%">
+
+<!--![Trajectory of rotation](2_Calculate_DFT_SPE/trajectory.gif)>-->
+
+<!--![Conformer energies](2_Calculate_DFT_SPE/conformer_animation.gif)-->
+
 ### 2. Non-*C*<sub>2</sub> Conformer Enumeration
 Following discovery of non-*C*<sub>2</sub> conformations in cage **2**'s crystal structure, expanded conformational analysis was performed without symmetry constraints.
 
@@ -114,6 +124,7 @@ Analysis of tetramine **A** geometries observed in crystal structures of cages *
 This repository contains the initial scripts used to calculate the geometric ranges of flexible quadrilateral subcomponents.
 
 Watch this video to see how the flexible quadrilateral geometry of the tetramine subcomponent works:
+
 [![Watch the video](https://img.youtube.com/vi/Om998bbISRY/0.jpg)](https://www.youtube.com/watch?v=Om998bbISRY)
 
 
