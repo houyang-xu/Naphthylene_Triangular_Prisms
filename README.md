@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 # Naphthylene-Triangular-Prisms
 This repository contains the scripts and xyz-files relevant for the study of a series of triangular prismatic metal-organic cages (MOCs) from the subcomponent self-assembly of a geometrically flexible quadrilateral tetramine and increasingly large triamine building blocks.
@@ -117,4 +116,4 @@ This repository contains the initial scripts used to calculate the geometric ran
 Watch this video to see how the flexible quadrilateral geometry of the tetramine subcomponent works:
 [![Watch the video](https://img.youtube.com/vi/Om998bbISRY/0.jpg)](https://www.youtube.com/watch?v=Om998bbISRY)
 
->>>>>>> 816dce403ab5b672a91e6d374518c5f847eec17f
+
