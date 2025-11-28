@@ -1,3 +1,14 @@
+'''
+This script uses "distances_5.csv" created by "createconformers_4DA.py" to create a half-violin plot, in order to show the frequency of quadrilateral edge lengths, as 
+represented by N···N Distance (Å), in comparison with the Nimine···Nimine Distances (Å) in cages as a straightforward visualization, showing that the tetramine adopts 
+conformations with varying geometrical occurrance or "popularity" in order to form these structures. 
+
+P.C.P. Teeuwen and H. Xu
+Lasted updated by Houyang Xu
+Last updated: 1 Aug 2025
+Updated for GitHub: 24 Nov 2025
+'''
+
 import numpy as np
 import pandas as pd
 import os
