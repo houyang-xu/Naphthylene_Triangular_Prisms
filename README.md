@@ -60,7 +60,7 @@ Conformers analysed: 811 (after filtering)
 - 811 conformers within 100 kcal mol<sup>-1</sup> of minimum energy
 - Results visualised in scatter plots showing energy-geometry correlation
 
-Below are two concerted animations that show <!--(1) the trajectory of the tetramine **A** across the 811 conformers within 100 kcal mol<sup>-1</sup> of minimum energy, (2) -->an animated 3D plot showing the DFT energy of the 811 <!--these-->conformers.
+Below is an animation<!--are two concerted animations--> that show <!--(1) the trajectory of the tetramine **A** across the 811 conformers within 100 kcal mol<sup>-1</sup> of minimum energy, (2) -->an animated 3D plot showing the DFT energy of the 811 <!--these-->conformers.
 
 <!--<img src="2_Calculate_DFT_SPE/trajectory.gif" width="25%">-->
 
